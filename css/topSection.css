@@ -1,0 +1,258 @@
+header{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 20px;
+    color: #aba7e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 151;
+    transition: background linear 0.3s;
+}
+header img{
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+header .logo{
+    display:flex;
+    align-items:center;
+    color: #fff;
+    cursor: pointer;
+}
+header a, header span{
+    color: #fff;
+    margin: 0 10px;
+    padding-bottom: 5px;
+    border-bottom-color: #aba7e0 !important;
+    cursor: pointer;
+}
+.logo div{
+    display:flex;
+    align-items:center;
+}
+#topLabel{
+    margin-left: 10px;
+    transition: all linear 0.3s;
+    font-size: 1em;
+}
+.aboutHeader{
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/*UNDERLINE BUTTON ANIMATION */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #b5afff;
+  height: 3px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+.topSection{
+    width: 100%;
+    padding-top:80px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+.avi{
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 9vw);
+    top: 18.5vw;
+    animation: meComeUp 1.5s ease-in-out;
+}
+.avi img{
+    width:18vw;
+}
+
+.topSection li img{
+    width: 40px;
+}
+
+.topSection ul{
+    display: block;
+    width: 50vw;
+    height: 50vw;
+    border: 6vw solid #2c2c31;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.p2{
+    top:500px;
+    left: 190px;
+}
+.p3,.p4{
+    left: auto;
+    right: 250px;
+}
+.p4{
+    top:500px;
+    right: 157px;
+}
+
+.topSection li{
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    position: absolute;
+    transition: all 4s ease-in-out;
+    cursor: pointer;
+}
+
+/*TOP SECTION LABEL*/
+.topSection .options .label{
+    font-size: 1.3vw;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    border-radius: 4px;
+    background: #7e76d3;
+    height: 4vw;
+    width: 12vw;
+    left: -220px;
+    color: #fff;
+    transition: all linear 0.3s;
+    white-space: nowrap;
+    opacity: 0;
+    transform-origin: 100% 50%;
+}
+
+.topSection .options .label:after{
+    position: absolute;
+    z-index: 20;
+    content: "";
+    top: 0;
+    right: -1.3vw;
+    width: 0px;
+    height: 0;
+    border-left:1.4vw solid #7e76d3;
+    border-top:2vw solid transparent; 
+    border-bottom:2vw solid transparent;   
+}
+
+.topSection .label span{
+    display: block;
+    position: absolute;
+    bottom:-17px;
+    opacity: 0;
+    transition: all linear 2s;
+}
+
+.topSection .showLabel{
+    opacity: 1 !important;
+    animation: labelFadeIn 1s, labelFadeOut 2s 2s!important;
+}
+
+.topSection .showLabel span{
+    animation: textFadeIn 2s ease-out 0.3s !important;
+}
+
+.topSection .mask{
+    position: absolute;
+    z-index: 4;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 1vw;
+    background: #7e76d3;
+    border-radius: 5px;
+}
+
+.game .label, .game .mask{
+    background: #49ccc1 !important;
+}
+.game .label:after{
+    border-left:1.4vw solid #49ccc1 !important;
+}
+
+.art .label, .art .mask{
+    background: #ff436c !important;
+}
+.art .label:after{
+    border-left:1.4vw solid #ff436c !important;
+}
+
+.animation .label, .animation .mask{
+    background: #6d7cd1 !important;
+}
+.animation .label:after{
+    border-left:1.4vw solid #6d7cd1 !important;
+}
+
+
+canvas{
+    background: #333339;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    z-index: -1;
+}
+
+/*AVI SLIDE UP*/
+@keyframes meComeUp {
+    from {top: 29vw; opacity: 0;}
+    to {top: 18.5vw; opacity: 1;}
+}
+
+/*LABEL ANIMATION*/
+@keyframes labelFadeIn {
+    from {width: 0; left: 0px;  opacity: 0.5;}
+    to {width: 12vw; left:-220px; opacity: 1;}
+}
+
+@keyframes labelFadeOut {
+    from {width: 12vw; opacity: 1;}
+    to {width: 12vw; opacity: 0;}
+}
+
+/*LABEL TEXT ANIMATION*/
+@keyframes textFadeIn {
+    0% {bottom: -17px; opacity: 0;}
+    20% {bottom: 17px; opacity: 0.6;}
+    40% {bottom: 17px; opacity: 1;}
+    60% {bottom: 17px; opacity: 1;}
+    80% {bottom: 17px; opacity: 1;}
+    100% {bottom: 17px; opacity: 1;}
+}
+
+@media screen and (max-width: 1000px){
+    canvas{
+        display: none;
+    }
+    .topSection{
+        background: #333339;
+    }
+}

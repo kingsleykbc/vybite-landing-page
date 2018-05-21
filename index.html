@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/topSection.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <title>KINGSLEY</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/images/Dummy2.png" alt="logo"/>
+            <div>Kingsley's <h3 id="topLabel"></h3></div>
+        </div>
+        <div class="menu">
+            <a class="hvr-underline-from-center" href="#">Home</a> /
+            <span class="hvr-underline-from-center" id="aboutNav">About</span> /
+            <a class="hvr-underline-from-center" href="# ">Portfolio</a> /
+            <a class="hvr-underline-from-center" href="# ">Skills</a> /
+            <a class="hvr-underline-from-center" href="# ">Contact</a> 
+        </div>
+    </header>
+    <div class="topSection">
+        <div class="avi">
+            <img src="./assets/images/Dummy1.png" alt="avatar"/>
+        </div>
+        <div class="options">
+            <div class="petrution p1"></div>
+            <div class="petrution p2"></div>
+            <div class="petrution p3"></div>
+            <div class="petrution p4"></div>
+            <ul>
+                <li class="developer">
+                    <img src="./assets/images/Dummy2.png" alt="logo" />
+                    <div class="label">
+                        <div class="mask"></div>
+                        <span>DEVELOPER</span>
+                    </div>
+                </li>
+                <li class="game">
+                    <img src="./assets/images/Dummy2.png" alt="logo" />
+                    <div class="label">
+                        <div class="mask"></div>
+                        <span>GAME DESIGN</span>
+                    </div>
+                </li>
+                <li class="art">
+                    <img src="./assets/images/Dummy2.png" alt="logo" />
+                    <div class="label">
+                        <div class="mask"></div>
+                        <span>ART</span>
+                    </div>
+                </li>
+                <li class="animation">
+                    <img src="./assets/images/Dummy2.png" alt="logo" />
+                    <div class="label">
+                        <div class="mask"></div>
+                        <span>ANIMATION</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <canvas id="snowEffect"></canvas>
+    </div>
+
+    <div id="greeting">
+        <div id="wavingHand">
+            <img src="./assets/images/Dummy2.png" />
+        </div>
+
+
+        <h1>Hi there, I'm Kingsley</h1>
+        <p>
+            I am an independent web and mobile app developer, game designer, digital artist and 2D animator based in Lagos Nigeria.
+        </p>
+        <p id="condGreeting">
+            I heve developed several web apps. Some of them hosted on my Github. I have also worked with a few teams (school Projects)
+            and currently working on one for my startup.
+        </p>
+
+        <span href="#" class="hoverButton" id="moreAbout">More About Me</span>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="portfolio">
+        <div class="header">
+            PORTFOLIO
+        </div>
+        <div id="condPortfolio">
+            <div id="devPortfolio">
+                <div class="filter">
+                    <ul>
+                        <li class="active">All</li>
+                        <li>School Projects</li>
+                        <li>Personal Projects</li>
+                    </ul>
+
+                    <a href="https://github.com/kingsleykbc" target="_blank" class="hoverButton purple" id="gitHub"> My Github</a>
+                </div>
+                <div class="works">
+                    <div id="worksContainer">
+                        <!-- Vybite -->
+                        <div class="work">
+                            <div class="image">
+                                <img src="./assets/images/Dummy3.png"/>
+                                <div class="overlay">
+                                    <img src="./assets/images/Dummy3.png"/>
+                                </div>
+                            </div>
+                            <h3>Vybite</h3>
+                            <p>
+                                This is an app i am currently working on. I can't say much about it, but it is coming soon
+                            </p>
+                        </div>
+
+                        <!-- Portfolio Site -->
+                        <div class="work">
+                            <div class="image">
+                                <img src="./assets/images/Dummy3.png"/>
+                                <div class="overlay">
+                                    <img src="./assets/images/Dummy3.png"/>
+                                </div>
+                            </div>
+                            <h3>My Portfolio Site XD</h3>
+                            <p>
+                                This is this site you're on. It was a weekend hackaton project done me and some guys.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="skills">
+        <div id="skillsleft">
+            <div id="bubble"></div>
+            <h1>Proficient Tools</h1>
+            <p id="condExplanation">
+                I mainly use React.js (a JavaScript frontend framework) and React Native to build web and mobile app UIs respectively, Node.js for the Server and MongoDB as the database.
+                <br><br>
+                However, I still use standard HTML5, C33 and Vanilla JavaScript for regular websites (like this) and smaller web apps.
+            </p>
+            <a href="https://github.com/kingsleykbc" target="_blank" class="hoverButton"> View All</a>
+        </div>
+        <div id="skillsRight">
+            <div id="laptopFrame">
+                <div class="content">
+                    CONTENT HERE
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact">
+        <div class="headerHolder">
+            <div class="header">
+                CONTACT
+            </div>
+        </div>
+        <div id="contactForm">
+            <div id="form">
+                <form>
+                    <input type="text" placeholder="Full Name" />
+                    <input type="text" placeholder="Email Address" />
+                    <textarea placeholder="Your Message"></textarea>
+                    <button href="#" class="hoverButton purple" id="sendMail">Send</button>
+                </form>
+            </div>
+            <div id="instructions">
+                <div class="text">
+                    <h2>Want to Get in Touch ?</h2>
+                    <p>Leave your message and contact information in the form provided beside and i'll get to it as soon as possible</p>
+
+                    <div id="workingAnimation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div id="socialMedia">
+        <div class="header">
+            FOLLOW ME
+        </div>
+        <div id="medias">
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+
+            <div class="media">
+                <img src="./assets/images/Dummy2.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+    <div id="scrollTop">
+        <img src="./assets/images/Dummy2.png">
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <ul>
+            <li><a class="hvr-underline-from-center" href="#">Art</a></li>
+            <li><a class="hvr-underline-from-center" href="#">Animation</a></li>
+            <li><a class="hvr-underline-from-center" href="#">Game design</a></li>
+            <li><a class="hvr-underline-from-center" href="#">Development</a></li>
+        </ul>
+        <div>
+            &copy 2018 - Developed By Kingsley C. Anyabuike
+        </div>
+    </footer>
+
+
+    <!-- ABOUT SECTION -->
+    <div id="about">
+        <!-- CENCEL ABOUT BUTTON -->
+        <div id="cancelAbout"> &times </div>
+
+        <!-- RIBBONS -->
+        <div class="symbols">
+            <div id="topRibbon"></div>
+            <div id="bottomRibbon"></div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div id="aboutModalHolder">
+            <div id="aboutModal">
+
+                <div id="avatar">
+                    <img src="./assets/images/Dummy2.png" />
+                </div>
+
+                <div class="content">
+                    <div id="aboutTitle">
+                        <h1>Hi, i'm kingsley</h1>
+                    </div>
+                    <article id="aboutContent">
+                        <section>
+                            <p>
+                                My name is Kingsley Anyabuike Chubie. I was born October 11th 1997 in Lagos Nigeria. I have a younger sister and i live in Agungi Lekki ...
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>App Development</h2>
+                            <p>
+                                I first got into App development during my final year of high school. I wanted to build a website, but didn't know anything about programming
+                                (I just thought it was like a drag n drop thing XD). 
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Game Design</h2>
+                            <p>
+                                Game design is what made me good at programming in general i.e understanding the concepts. 
+                            </p>
+                        </section>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./js/snowEffect.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

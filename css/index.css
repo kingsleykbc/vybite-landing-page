@@ -1,0 +1,484 @@
+.header{
+    background: #333339;
+    padding: 25px;
+}
+
+/*floating wavy hand*/
+#wavingHand{
+    position: absolute;
+    top:-50px;
+    left:100px;
+    transition: all ease-in-out 1s !important;
+}
+#wavingHand.animate{
+    transition: all ease-in-out 1s !important;
+    top: 30px;
+    animation: dropHand 1.5s ease-out 0.3s infinite !important;
+}
+#wavingHand img{
+    width: 45px;
+    height: 45px;
+}
+
+/*Greeting*/
+#greeting{
+    margin-top: calc(50% - 9px);
+    padding: 40px;
+    padding-top: 9%;
+    padding-bottom: 95px;
+    text-align: center;
+    transition:all linear 1s;
+    position: relative;
+}
+#greeting h1{
+    margin-bottom: 20px;
+}
+#greeting p{
+    max-width: 1000px;
+    margin: auto;
+    line-height: 30px;
+    
+}
+#condGreeting{
+    margin-top: 20px !important;
+    margin-bottom: 50px !important;
+    opacity: 0.7;
+}
+
+/* Bounce To Right Button */
+.hoverButton {
+    display: inline-block;
+    vertical-align: middle;   
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    transition: color 0.5s linear;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 15px;
+    cursor: pointer;
+}
+.hoverButton:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.5s ease-out;
+}
+.hoverButton:hover, .hoverButton:focus, .hoverButton:active {
+  color: #727fda;
+}
+.hoverButton:hover:before, .hoverButton:focus:before, .hoverButton:active:before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+
+/* THEMEING */
+.purple{
+    color: #a7b0f8;
+    border-color:#a7b0f8;
+}
+.purple:hover, .purple:focus, .purple:active {
+    color: #fff;
+}
+.purple:before{
+    background: #a7b0f8;
+}
+
+/* RED */
+.red{
+    color: #ff5d80;
+    border-color:#ff5d80;
+}
+.red:hover, .red:focus, .red:active {
+    color: #fff;
+}
+.red:before{
+    background: #ff5d80;
+}
+
+/* GREEN */
+.green{
+    color: #58fff1;
+    border-color:#58fff1;
+}
+.green:hover, .green:focus, .green:active {
+    color: #393941;
+}
+.green:before{
+    background: #58fff1;
+}
+
+/* BLUE */
+.blue{
+    color: #9eacff;
+    border-color:#9eacff;
+}
+.blue:hover, .blue:focus, .blue:active {
+    color: #fff;
+}
+.blue:before{
+    background: #9eacff;
+}
+
+/*DEV PORTFOLIO*/
+.portfolio{
+    border-bottom: 2px solid #393941;
+}
+#devPortfolio{
+    display:flex;
+    min-height: 600px;
+}
+#devPortfolio .filter{
+    background: rgba(44, 44, 49, 0.4);
+    padding: 30px;
+    padding-bottom: 50px;
+    width: 30%;
+    max-width: 300px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.filter ul{
+    flex-grow: 1;
+    width: 100%;
+}
+.filter li{
+    padding: 25px 0;
+    border-bottom: 1px solid #26262b;
+}
+.filter li.active{
+    color: #9fa7e6;
+    font-weight: bold;
+    cursor: pointer;
+}
+#devPortfolio .works{
+    flex-grow: 1;
+    position: relative;
+}
+#worksContainer{
+    padding:35px;
+    width: 100%;
+    height: 100%;
+    margin-top:200px;
+    opacity: 0;
+    display:flex;
+    align-items:flex-start;
+    transition:all linear 0.6s !important;
+
+}
+#worksContainer.animate{
+    margin-top:0;
+    opacity:1;
+    transition:all linear 0.6s !important;
+}
+
+.work{
+    width: 25%;
+    margin: 40px;
+    /* max-width: 250px; */
+}
+.work .image{
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+.work h3{
+    color: #9fa7e6;
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+.work .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(27, 25, 37, 0.61);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease-out;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+.overlay img{
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: none;
+}
+.image:hover .overlay{
+    height: 100%;
+    border-radius: 5px;
+}
+.work p{
+    margin-top: 10px;
+    line-height: 24px;
+    font-size: 0.95em;
+    opacity: 0.5;
+}
+
+/*WAVING HAND ANIMATION*/
+@keyframes dropHand {
+    0% {top: 30px;}
+    30% {top: 60px;}
+    90% {top: 30px;}
+}
+
+/*SKILLS SECTION*/
+#skills{
+    display:flex;
+    min-height: 550px;
+}
+#bubble{
+    position: absolute;
+    border: 40px solid transparent;
+    border-left-color: #727fda;
+    right: -80px;
+    top: 220px;
+    z-index: 9;
+}
+#skillsleft{
+    width: 50%;
+    max-width: 600px;
+    padding: 45px;
+    background: #727fda;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+#skillsleft p{
+    line-height: 29px;
+    margin: 22px 0; 
+    flex-grow: 1;
+}
+
+#skillsRight{
+    position: relative;
+    flex-grow: 1;
+}
+
+/*LAPTOP*/
+#laptopFrame{
+    position: absolute;
+    width: calc(100% - 50px);
+    min-height: 512px;
+    border: 25px solid #2f2f36;
+    border-bottom: 62px solid #2f2f36;
+    border-radius: 15px;
+    margin:25px;
+}
+
+#laptopFrame::before{
+    content:"";
+    position: absolute;
+    bottom:-125px;
+    background: #26262b;
+    width: calc(100% + 125px);
+    left: -80px;
+    height: 50px;
+    border-bottom-left-radius: 15px;
+}
+
+#laptopFrame::after{
+    content:"";
+    position: absolute;
+    background: #41414b;
+    height:17px;
+    bottom:-87px;
+    left: 25%;
+    right:25%;
+    border-radius:7px;
+}
+
+/* CONTACT SECTION */
+#contact .headerHolder{
+    padding-top: 50px;
+    background: #333339;
+}
+#contact .header{
+    border-top: 2px solid #2d2d33;
+}
+#contactForm{
+    display:flex;
+    min-height: 650px;
+}
+#form{
+    width: 70%;
+}
+#form form{
+    display:flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+#form input, textarea{
+    display: inline-block;
+    font-size: 100%;
+    padding: 17px;
+    color: #fff;
+    background: none;
+    border: 1px solid #918daa;
+    margin-bottom: 35px;
+    transition: border linear 0.3s;
+}
+#form input:focus, #form textarea:focus{
+    border-color: #fff;
+}
+#form textarea{
+    resize: vertical;
+    height: 215px;
+}
+#form button{
+    margin-top: 20px;
+    align-self: flex-start;
+    min-width: 200px;
+
+}
+
+#instructions{
+    flex-grow: 1;
+    background: #2c2c31 url("../assets/images/Dummy2.png") 50% 100% no-repeat;
+    background-size: 60%;
+    padding: 40px;
+}
+
+#instructions h2{
+    margin-bottom: 20px;
+}
+#instructions p{
+    line-height: 29px;
+    opacity: 0.4;
+}
+
+/* WORKING ANIMATION */
+@keyframes blink {
+    0% {
+      opacity: .5;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .1;
+    }
+}
+#workingAnimation{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 20px;
+}
+
+#workingAnimation span{
+  display:block;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#929fff;
+}
+#workingAnimation span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+#workingAnimation span:nth-child(2) {
+    animation-delay: .2s;
+    margin:15px;
+}
+
+#workingAnimation span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+
+/* SOCIAL MEDIA */
+#socialMedia .header{
+    background: #36353c;
+    border-bottom: 2px solid #2f2f36;
+}
+#socialMedia{
+    background: #36353c;
+}
+#medias{
+    padding:90px 0;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    overflow: hidden;
+    justify-content: center;
+}
+.media{
+    padding: 25px;
+    display: inline-block;
+    background: #727fda;
+    margin:0 200px;
+    transition: all linear 1s;
+    cursor: pointer;
+}
+.media.animate{
+    margin: 0 20px;
+    transition: all linear 1s;
+}
+.media img{
+    width: 40px;
+    height: 40px;
+}
+
+/* FOOTER SECTION */
+#scrollTop{
+    background: rgba(24, 24, 27, 0.5);
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background linear 0.3s;
+}
+#scrollTop img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: -40px;
+    left: calc(50% - 20px);
+    transition: all linear 0.3s;
+}
+#scrollTop:hover{
+    background: rgba(24, 24, 27, 0.8);
+}
+#scrollTop:hover img{
+    bottom: 0;
+}
+footer{
+    background: #25252b;
+}
+footer ul{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding: 25px 0;
+}
+footer li a{
+    padding: 15px 25px;
+}
+footer div{
+    font-size: 0.95em;
+    opacity: 0.5;
+    text-align: center;
+    padding: 30px 0;
+}

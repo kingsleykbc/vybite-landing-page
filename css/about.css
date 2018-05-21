@@ -1,0 +1,118 @@
+#about{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 65px);
+    z-index: 10;
+    display: none;
+    overflow: auto;
+}
+#cancelAbout{
+    font-size: 3em;
+    position: fixed;
+    color: rgba(0, 0, 0, 0.2);
+    z-index: 12;
+    right:50px;
+    top:75px;
+    cursor: pointer;
+    transition:color linear 0.3s;
+}
+#cancelAbout:hover{
+    color:#000;
+}
+#topRibbon, #bottomRibbon{
+    position: fixed;
+    width: 0;
+    height: 50%;
+    transition:all linear 0.5s;
+}
+#topRibbon{
+    top:0;
+    left:0;
+    background: #7e76d3;
+}
+#bottomRibbon{
+    bottom:0;
+    right:0;
+    background: #7e76d3;
+}
+#topRibbon.roll, #bottomRibbon.roll{
+    width: 100%;
+    transition:all linear 0.5s;
+}
+
+#aboutModal{
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    z-index: 11;
+    left: calc(50% - 400px);
+    transition: all ease-out 0.6s;
+    text-align: center;
+    top:25%;
+}
+
+#aboutModalHolder{
+    overflow: auto;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right:0;
+}
+
+#avatar img{
+    margin-top:100px;
+    width:0;
+    height: 0;
+    border-radius: 50%;
+    border:0px solid #fff;
+    margin-bottom: 140px;
+    transition: all ease-in-out 0.5s;
+    transform-origin: 50% 50%;
+}
+#avatar img.roll{
+    margin-top:0;
+    margin-bottom: 40px;
+    width:200px;
+    height: 200px;
+    border:7px solid #fff;
+}
+
+#about h1{
+    font-weight: normal;
+    font-size: 3em;
+}
+
+#aboutTitle{
+    position: relative;
+    height:60px;
+    overflow: hidden;
+}
+
+#aboutTitle h1{
+    position: absolute;
+    width: 100%;
+    top:60px;
+    transition: all ease-in-out 0.6s;
+}
+#aboutTitle h1.roll{
+    top:0;
+}
+#about section{
+    margin-top: 40px;
+}
+#about p{
+    text-align: justify;
+    line-height: 30px;
+}
+#about h2{
+    margin-bottom: 20px;
+    text-align: left;
+    opacity: 0.6;
+}
+
+#aboutContent{
+    margin-bottom: 100px;
+}
