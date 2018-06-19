@@ -1,209 +1,337 @@
 $(document).ready(function () {
-//VARIABLES-----------------------------------------------------------------------------------------------------
-var themeColor = "#727fda";
-var themeClass = "purple";
-var topLabel = "APP DEVELOPMENT";
-var currentThemeClass = themeClass;
-var showingAbout = false;
+// RESPONSIVE HEADER ---------------------------------------------------------------------------------------
+var showingDropDown = false;
 
-//FUNCTIONS-----------------------------------------------------------------------------------------------------
-
-//Showing the label
-function showLabel(target) {
-    let label = $(target).find(".label");
-    label.addClass("showLabel");
-
-    setTimeout(function () {
-        label.css("opacity", "0");
-        label.removeClass("showLabel");
-    }, 3000);
-}
-
-//Applying Theme Colors
-function applyThemeColors() {
-    //Color Settings
-    $("#greeting, .media, #workingAnimation span, #skillsleft, #topRibbon, #bottomRibbon").css("background", themeColor);
-    $("#bubble").css("border-left-color", themeColor);
-    $(".active").css("color",themeColor);
-    $("#gitHub, #sendMail").removeClass(currentThemeClass);
-    $("#gitHub, #sendMail").addClass(themeClass);
-
-    //Handle the top Text Animation
-    $("#topLabel").css("opacity", 0);
-    $("#topLabel").removeClass(currentThemeClass)
-    
-    setTimeout(function(){
-        $("#topLabel").html(topLabel);
-        $("#topLabel").addClass(themeClass);
-        $("#topLabel").css("opacity","1");
-        
-    }, 500);
-
-    currentThemeClass = themeClass;
-}
-
-//Handle the Category Change
-function handleCategoryChange(category) {
-    switch (category) {
-        case "game":
-            themeColor = "#49ccc1";
-            themeClass = "green";
-            topLabel="GAMES";
-        break;
-        case "art":
-            themeColor = "#ff436c";
-            themeClass = "red";
-            topLabel="ART";
-        break;
-        case "animation":
-            themeColor = "#6d7cd1";
-            themeClass = "blue";
-            topLabel="ANIMATIONS";
-        break
-        default:
-            themeColor = "#7e76d3";
-            themeClass = "purple";
-            topLabel="APP DEVELOPMENT";
-    }
-    //Change Theme Color
-    applyThemeColors();
-}
-
-//Scroll Functions
-function setHeaderBackground(scroll) {
-    var alpha = scroll / 720 * 0.5;
-    $("header").css("background", "rgba(44,44,50," + alpha + ")");
-}
-
-function addAnimation(target, test, scroll){
-    if (scroll >= test){
-        $(target).addClass("animate");
+function toggleDropDown(){
+    if(showingDropDown){
+        $("#resMenu").css("width","0");
+        showingDropDown = false;
     }else{
-        $(target).removeClass("animate");
+        $("#resMenu").css("width", "100%");
+        showingDropDown = true;
     }
 }
 
-
-
-//THE CIRCULAR ICON BUTTONS
-var type = 0.5; 
-var radius = '22vw'; 
-var start = 180; 
-var $elements = $('.options li');
-var numberOfElements = (type === 1) ? $elements.length : $elements.length - 1;
-var slice = 360 * type / numberOfElements;
-
-$elements.each(function (i) {
-    var $self = $(this);
-    var rotate = slice * i + start;
-    var rotateReverse = rotate * -1;
-
-    $self.css({
-        'transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)'
-    });
+$(".hamburgerMenu").click(function () {
+    toggleDropDown();
 });
 
+//SMOOTH SCROLLING -----------------------------------------------------------------------------------------
+var scrollLink = $('header a, #backtoTop, #footerMenu a, #resMenu a');
 
-//SHOW THE LABEL ON CLICK OR HOVER
-$(".options li").click(function(){
-    let target = this;
-    $(this).find("img").click(function () {
-        showLabel(target);    
-    });
-        
-    handleCategoryChange(this.className);
+// Smooth scrolling
+scrollLink.click(function (e) {
+    toggleDropDown();
+    if(!showingAbout){
+        e.preventDefault();
+        $('header a').removeClass('active');
+
+        $('body,html').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000);
+    }
 });
 
-$(".options li").mouseover(function () {
-    let target = this;
-    showLabel(target);   
-});
-
-//APPLY THEMES
-applyThemeColors();
-
-//HANDLE SCROLL FUNCTIONS
 $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-
-    setHeaderBackground(scroll);
-    addAnimation("#wavingHand",200,scroll);
-    addAnimation("#worksContainer",800,scroll);
-    addAnimation(".media",2600,scroll)
+    scrollLinkSwitch($(this).scrollTop());
 });
 
 
-//THE ABOUT SECTION--------------------------------------------------------------------------------------------------
+// Active link switching
+function scrollLinkSwitch(scrollbarLocation){
+    scrollLink.each(function () {
+        var sectionOffset = $(this.hash).offset().top - 20;
 
+        if (sectionOffset <= scrollbarLocation) {
+            $("#contactButton").removeClass('active');
+
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+
+        }
+    })
+}
+
+
+//ABOUT SECTION -------------------------------------------------------------------------------------------------
+var showingAbout = false;
 //Toggle buttons
-$("#aboutNav, #moreAbout").click(function () {
+$("#aboutButton, #moreAbout, #footerAbout").click(function () {
+    toggleDropDown();
     toggleAbout();
- });
+});
 
- //Dissmiss buttons
+//Dissmiss buttons
 $(".logo, #cancelAbout").click(function () {
-    if(showingAbout){
+    if (showingAbout) {
         removeAbout();
         showingAbout = false;
     }
 });
 
+
+//ABOUT FUNCTIONS    
 //Toggle the About Section
 function toggleAbout() {
-    if(showingAbout){
+    if (showingAbout) {
         removeAbout();
+        $("#aboutButton").removeClass("active");
+        
         showingAbout = false;
-    }else{
+    } else {
         showAbout();
+        $("#aboutButton").addClass("active");
+        $('header a').removeClass('active');
         showingAbout = true;
     }
 }
 
-//ABOUT FUNCTIONS
-function showAbout(){
-    $("body").css("overflow","hidden");
-
-    //Set the header color
-    $("header").addClass("aboutHeader");
+function showAbout() {
+    //Prevent double scrollbars
+    $("body").css("overflow", "hidden");
 
     //Show the about
-    $("#about").css("display","block");
+    $("#about").css("display", "block");
 
     //roll the ribbons
-    setTimeout(function(){
+    setTimeout(function () {
         $("#topRibbon").addClass("roll");
         $("#bottomRibbon").addClass("roll");
     }, 100);
 
-    //Bring up the Greeting
+    //Slide up the Content
     setTimeout(function () {
-        $("#aboutTitle h1").addClass("roll");
-    }, 600);
+        $("#aboutContent").addClass("roll");
+    }, 400);
 
     //Bring up the Avatar
     setTimeout(function () {
-        $("#avatar img").addClass("roll");
+        $("#aboutAvatar img").addClass("roll");
     }, 1200);
 }
 
-function removeAbout(){
+function removeAbout() {
     $("body").css("overflow", "visible");
 
-    //Remove the header color
-    $("header").removeClass("aboutHeader");
-
-    //Slide down the about title
-    $("#aboutTitle h1, #avatar img").removeClass("roll");
+    //Slide down the content
+    $("#aboutContent").removeClass("roll");
+    $("#aboutAvatar img").removeClass("roll");
 
     //remove ribbons
     setTimeout(function () {
         $("#topRibbon,#bottomRibbon").removeClass("roll");
-    }, 300);
+    }, 400);
 
     //hide the about
     setTimeout(function () {
         $("#about").css("display", "none");
-    },1000);
+    }, 1000);
 }
 
+// SKILLS SECTION ----------------------------------------------------------------------------------------
+var dom = $("#tools ul");
+var content ="";
+var skills = [
+    { 
+        img: "./images/logo_html.png", 
+        title:"HTML 5", 
+        description:"This is a mark up language used for creating web pages. I use HTML to build static or PHP based websites.", 
+        proficiency:"95%"
+    },
+    {
+        img: "./images/logo_css.png",
+        title: "CSS 4",
+        description: "This is a styling language used to design the pages. I use CSS with HTML and JSX.",
+        proficiency: "95%"
+    },
+    {
+        img: "./images/logo_js.png",
+        title: "JavaScript (ES6)",
+        description: "A frontend scripting language. I use it for frontend and backend web app development.",
+        proficiency: "75%"
+    },
+    {
+        img: "./images/logo_react.png",
+        title: "React.js",
+        description: "A frontend JS framework for building web apps. I use is for all my non PHP based web apps.",
+        proficiency: "85%"
+    },
+    {
+        img: "./images/logo_node.png",
+        title: "Node.js",
+        description: "A JS multi-platform server environment. I use Node to build servers (backend) for my web and mobile apps.",
+        proficiency: "70%"
+    },
+    {
+        img: "./images/logo_php.png",
+        title: "PHP 7",
+        description: "A server side Scripting Language. I only use this for smaller web applications",
+        proficiency: "80%"
+    },
+
+    // ART TOOLS
+    {
+        img: "./images/logo_flash.png",
+        title: "Adobe Animate CC",
+        description: "A 2D vector animation tool. I use to to create my short animation videos",
+        proficiency: "85%"
+    },
+    {
+        img: "./images/logo_illustrator.png",
+        title: "Adobe illustrator",
+        description: "A 2D vector image tool. I use it for vector icons and UI designs.",
+        proficiency: "50%"
+    },
+    {
+        img: "./images/logo_clip.png",
+        title: "Clip Studio",
+        description: "A 2D Raster image tool. I use it for drawing, as well designing icons and UI",
+        proficiency: "85%"
+    }
+];
+
+
+skills.forEach(function(item,index){
+    content += "<li>"+
+        "<div class='tool' >"+
+            "<div class='toolInfo'>"+
+                "<div class='toolPic'>"+
+                    "<img src='"+item.img+"' />"+
+                "</div>"+
+                "<div class='toolDescription'>"+
+                    "<h3>"+item.title+"</h3>"+
+                    "<p>"+item.description+"</p>"+
+                "</div>"+
+            "</div>"+
+            "<div class='toolBack'>"+
+                "<div>"+
+                    "<h2>"+item.proficiency+"</h2>"+
+                "</div>"+
+                "<p>Proficiency</p>"+
+            "</div>"+
+        "</div >"+
+    "</li>";
 });
+dom.html(content);
+
+
+// FUNCTION TO SCROLL TOOLS AND CHANGE LABEL
+function scrollTools(isLeft) {
+    if(isLeft){
+        scrollNo = (scrollNo <= 0) ? 0 : scrollNo - 400;
+    }else{
+        scrollNo = (scrollNo >= $("#skills ul").outerWidth()) ? $("#skills ul").outerWidth() : scrollNo + 400;
+    }
+
+    $('#skills ul').animate({
+        scrollLeft: scrollNo
+    }, 600);
+
+    var content = (scrollNo >= 800)?"Art and Animation Tools":"Web and App development Tools";
+
+    //Change Label
+    $('#toolsLabel').html(content);
+}
+
+// SCROLLING THE SKILLS SECTION
+var scrollNo = 0; //you can use this number to manipulate the label
+
+$('#left').click(function () {
+    scrollTools(true);
+});
+
+$('#right').click(function (){
+    scrollTools(false);
+});
+
+
+// PORTFOLIO SECTION--------------------------------------------------------------------------------------------
+
+$("#portfolio nav div").click(function(){
+    $("#portfolio nav div").removeClass("active");
+    $(this).addClass("active");
+    var margin = "";
+
+    switch($(this).attr('id')){
+        case "portArt":
+            margin = "0";
+        break;
+        case "portAnimation":
+            margin = "-100%";
+        break;
+        case "portWebsites":
+            margin = "-200%";
+        break;
+        case "portApp":
+            margin = "-300%";
+        break;
+    }
+    $("#portArtSection").css("margin-left",margin);
+});
+
+//HANDLE PORTFOLIO ART IMAGES
+var artworks = [
+    {
+        img:'./images/artWorks/forge.png',
+        caption:"Forge Concept Art #1"
+    },
+    {
+        img: './images/artWorks/forgeFull.png',
+        caption: "Forge Concept Art #2"
+    },
+    {
+        img: './images/artWorks/dora.png',
+        caption: "Forge Concept Art #1"
+    },
+    {
+        img: './images/artWorks/justiceMerge.png',
+        caption: "Forge Concept Art #1"
+    },
+    {
+        img: './images/artWorks/knockout.png',
+        caption: "Forge Concept Art #2"
+    },
+    {
+        img: './images/artWorks/laraCroft.png',
+        caption: "Forge Concept Art #1"
+    },
+    {
+        img: './images/artWorks/moana.png',
+        caption: "Forge Concept Art #2"
+    },
+    {
+        img: './images/artWorks/neineCover.png',
+        caption: "Forge Concept Art #1"
+    },
+    {
+        img: './images/artWorks/neineFull.png',
+        caption: "Forge Concept Art #2"
+    },
+    {
+        img: './images/artWorks/praise.png',
+        caption: "Forge Concept Art #1"
+    }
+];
+
+artContent = "";
+
+artworks.forEach(function (item, index) {
+    artContent += 
+    "<div class='portImg' onClick=>"+
+        "<img src='"+item.img+"'/>"+
+        "<div class='overlay'>"+
+            "<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24'>"+
+                "<path d='M0 0h24v24H0z' fill='none' />"+
+                "<path d='M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z'/>"+
+            "</svg>"+
+        "</div>"+
+    "</div>";
+});
+
+$("#portArtSection").html(artContent);
+
+
+
+});
+
+

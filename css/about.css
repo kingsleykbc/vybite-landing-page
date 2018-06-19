@@ -1,68 +1,115 @@
-#about{
+#about{ 
     position: fixed;
     bottom:0;
     left: 0;
     width: 100%;
-    height: calc(100% - 65px);
-    z-index: 10;
+    height: calc(100% - 58px);
+    z-index: 20;
     display: none;
     overflow: auto;
+    color: #fff;
 }
+#about p{
+    line-height: 45px !important;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+#about section{
+    margin-top: 50px;
+}
+#about a{
+    color: #fff;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    transition: all ease-out 0.3s;
+}
+#about a:hover{
+    background: #fff;
+    color: #6f87f3;
+}
+#about h2{
+    margin: 20px 0;
+    text-align: left;
+    color: #6f87f3;
+    padding: 15px;
+    border-radius: 5px;
+    background: #fff;
+    display: inline-block;
+    font-size: 1.15em;
+    box-shadow: -1px 2px 7px rgba(44, 43, 105, 0.3);
+    min-width: 150px;
+    text-align: center;
+}
+
+
 #cancelAbout{
-    font-size: 3em;
     position: fixed;
-    color: rgba(0, 0, 0, 0.2);
-    z-index: 12;
     right:50px;
     top:75px;
+
+    background: #fff;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: -1px 2px 7px rgba(44, 43, 105, 0.3);
+    width:50px;
+    height: 50px;
+    font-size: 2.6em;
+    color: #6f87f3;
+    z-index: 12;
     cursor: pointer;
-    transition:color linear 0.3s;
 }
+
 #cancelAbout:hover{
     color:#000;
 }
 #topRibbon, #bottomRibbon{
     position: fixed;
     width: 0;
-    height: 50%;
+    height: calc(50% - 29px);
     transition:all linear 0.5s;
+    background: #6f87f3;
+    z-index: -1;
 }
 #topRibbon{
-    top:0;
+    top:58px;
     left:0;
-    background: #7e76d3;
 }
 #bottomRibbon{
     bottom:0;
     right:0;
-    background: #7e76d3;
 }
 #topRibbon.roll, #bottomRibbon.roll{
     width: 100%;
     transition:all linear 0.5s;
 }
 
-#aboutModal{
+
+.aboutContent{
     position: absolute;
+    top:55px;
+    z-index: 10;
     width: 100%;
-    max-width: 800px;
-    z-index: 11;
-    left: calc(50% - 400px);
-    transition: all ease-out 0.6s;
+    margin: auto;
+    padding: 20px;
+    max-width: 1000px;
+    left:calc(50% - 500px);
+    right:calc(50% - 500px);
+    padding-top: 230px;
+}
+
+#aboutAvatar{
+    position: absolute;
     text-align: center;
-    top:25%;
-}
-
-#aboutModalHolder{
-    overflow: auto;
-    position: fixed;
     top:0;
-    bottom: 0;
-    left: 0;
-    right:0;
+    left:0;
+    z-index: 10;
+    width: 100%;
 }
 
-#avatar img{
+#aboutAvatar img{
     margin-top:100px;
     width:0;
     height: 0;
@@ -72,7 +119,7 @@
     transition: all ease-in-out 0.5s;
     transform-origin: 50% 50%;
 }
-#avatar img.roll{
+#aboutAvatar img.roll{
     margin-top:0;
     margin-bottom: 40px;
     width:200px;
@@ -81,38 +128,65 @@
 }
 
 #about h1{
-    font-weight: normal;
+    font-weight: bold;
     font-size: 3em;
+    text-align: center;
 }
 
-#aboutTitle{
-    position: relative;
-    height:60px;
-    overflow: hidden;
+#aboutContent{
+    margin-top: 1000px;
+    opacity: 0;
+    transition: all ease-out 0.9s;
 }
-
-#aboutTitle h1{
-    position: absolute;
-    width: 100%;
-    top:60px;
-    transition: all ease-in-out 0.6s;
-}
-#aboutTitle h1.roll{
-    top:0;
-}
-#about section{
-    margin-top: 40px;
-}
-#about p{
-    text-align: justify;
-    line-height: 30px;
-}
-#about h2{
-    margin-bottom: 20px;
-    text-align: left;
-    opacity: 0.6;
+#aboutContent.roll{
+    margin-top: 0;
+    opacity: 1;
 }
 
 #aboutContent{
     margin-bottom: 100px;
+}
+
+.myVid{
+    border:3px solid #fff;
+    padding-top: 50%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: -1px 2px 12px rgba(44, 43, 105, 0.3);
+    margin-bottom: 30px;
+}
+
+.myVid iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+#about .socialMedia{
+    text-align: center;
+    margin-top: 30px;
+}
+#about .socialMedia .links{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+#about .socialMedia h3{
+    margin-bottom: 25px;
+}
+#about .socialMedia a{
+    display: inline-block;
+    fill: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+    background: none;
+    transition: all linear 0.3s;
+}
+#about .socialMedia a:hover{
+    fill: #fff;
+}
+#about .socialMedia svg{
+    width:40px;
+    height: 40px;
 }
