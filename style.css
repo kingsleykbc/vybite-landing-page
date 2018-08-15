@@ -172,4 +172,7 @@ footer{
     .newsletter{
         padding: 4px;
     }
+    .countdown span{
+        font-size: 0.25em;
+    }
 }
