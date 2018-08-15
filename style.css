@@ -12,7 +12,7 @@ body,html{
     height: 100%;
 }
 body{
-    background: #4593f0 url('./bg.svg') no-repeat;
+    background: #fff url('./bg.svg') no-repeat;
     background-position: right bottom;
     background-size: cover;
 }
