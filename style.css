@@ -50,7 +50,7 @@ body{
 }
 #days,#hours,#minutes,#seconds{
     color: #fff;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Haettenschweiler, Impact, sans-serif;
     text-shadow: 0 1px 10px rgba(64, 48, 150, 0.219);
 }
 .countdown span{
@@ -165,5 +165,11 @@ footer{
     }
     button span{
         display: none;
+    }
+    .backdrop{
+        display: none;
+    }
+    .newsletter{
+        padding: 4px;
     }
 }
