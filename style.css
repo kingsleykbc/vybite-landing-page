@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 850px;
-    background: #fff url('./_images/bg.png') 0% 0% no-repeat;
+    background: #fff url('./bg.png') 0% 0% no-repeat;
     background-size: cover;
     z-index: -1;
 }
@@ -173,7 +173,7 @@ header .menu a:first-child{
 
 .moreFeatures{
     min-height: 1000px;
-    background: #494175 url('./_images/bottomBg.svg') 0 0 no-repeat;
+    background: #494175 url('./bottomBg.svg') 0 0 no-repeat;
     background-size: 100%;
     padding-top:170px;
 }
@@ -201,7 +201,7 @@ header .menu a:first-child{
     padding-left: 50px;
     line-height: 25px;
     max-width: 700px;
-    background: url('./_images/starIcon.svg') 0 50% no-repeat;
+    background: url('./starIcon.svg') 0 50% no-repeat;
     background-size: 35px; 
     color: rgba(255, 255, 255, 0.7);
 }
