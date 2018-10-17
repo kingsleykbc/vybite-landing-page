@@ -4,42 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="./_images/logoIcon.png" />
     <link rel="stylesheet" href="style.css">
-
-    <title>Vybite Coming Soon !!!</title>
+    <title>Vybite Coming Soon</title>
 </head>
 <body>
-    <div class="backdrop"></div>
-    <div class="title">Vybite</div>
+    <!-- BACKDROP -->
+    <div class="backdrop">
 
-    <div class="countdown">
-        <div>
-            <div id="days">000</div>
-            <span>days</span>
-        </div> :
-        <div>
-            <div id="hours">00</div>
-            <span>hours</span>
-        </div> :
-        <div>
-            <div id="minutes">00</div>
-            <span>mins</span>
-        </div> :
-        <div>
-            <div id="seconds">00</div>
-            <span>seconds</span>
-        </div> 
     </div>
 
-    <div class="comingSoon">Coming Soon !!</div>
+    <!-- HEADER -->
+    <header>
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="./_images/logo.png" alt="" srcset=""> Vybite
+        </div>
 
-    <div class="newsletter">
-        <input type="text" name="" id="" placeholder="Your Email">
-        <button><span>Subscribe to </span>newsletter</button>
+        <!-- MENU -->
+        <div class="menu">
+            <a href="#aboutSection">About</a>
+            <a href="#newsletter">Newsletter</a>
+            <div class="contactUsButton" onclick="toggleBox()">
+                Contact Us
+            </div>
+        </div>
+    </header>
+
+    <!-- JUMBOTRON SECTION -->
+    <div class="jumbotronSection">
+        <!-- "COMING SOON" MESSAGE -->
+        <div class="comingSoonMessage">
+            Vybite is Coming Soon !!!
+        </div>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdownSection">
+            <div class="countdown">
+                <div>
+                    <div id="days">99</div>
+                    <span>days</span>
+                </div> :
+                <div>
+                    <div id="hours">99</div>
+                    <span>hours</span>
+                </div> :
+                <div>
+                    <div id="minutes">99</div>
+                    <span>mins</span>
+                </div> :
+                <div>
+                    <div id="seconds">99</div>
+                    <span>seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM MESSAGE -->
+        <div class="bottomMessage">
+            <p>
+                <span>>Welcome to the official vybite countdown site. Watch the the timer leading up to the release date of the Vybite
+                Platform. Vybite is still under construction.</span> You can find out about the platform, it's features and benefits 
+                on this page. You can also subscribe to our Newsletter, so as to stay updated with the progress of the application leading
+                up to it's release date. For more information about the platform, you can contact us.
+            </p>
+            <div class="button" onclick="toggleBox()">
+                Contact Us
+            </div>
+        </div>
     </div>
 
-    <footer>A Kintal Company</footer>
+    <!-- ABOUT MESSAGE -->
+    <div id="aboutSection">
+        <h1>So, what is Vybite ?</h1>
+        <p>
+            Vybite is an event hosting, recommendation and ticketing application. 
+            <br>
+            It is a platform where individuals and companies can host their movies, parties, live shows, seminars etc.
+            and have them recommended to the right group of people / customers, while the customers can buy, send and find
+            tickets to some of their favorite events.
+        </p>
+    </div>
 
+    <!-- FEATURE SECTION -->
+    <div class="featureSection">       
+        <!-- THE MESSAGE -->
+        <div class="featureMessage">
+            <h1>As a User...</h1>
+            <p>
+                With Vybite, you can find and buy tickets to all kinds of events you might be interested in.
+                Awesome Movies, trending shows, cool parties even private gatherings being hosted by friends and family.
+                <br>
+                Cool events you might be interested in will be recommended to you and
+                you can even search based on your mood. 
+                <br>
+                Low on cash? not a problem as you can also find lot's of
+                free events.
+                <br>
+                You can also take advantage of some amazing perks and discounts that could be attached to some tickets.
+                <br>
+                The app is very simple and ticket buying is super easy with just a few clicks. All you need to do is
+                find an event, pick the date and time and pay (with the option to call an Uber or get directions to the venue). No need to check emails, verify account or put in credit card details
+                everytime you want to pay.
+                <br>
+            </p>
+        </div>
+        <!-- THE IMAGE -->
+        <div class="featureImg">
+            <img src="./_images/sideImage1.svg" alt="" srcset="">
+        </div>
+        
+    </div>
+
+    <!-- FEATURE SECTION -->
+    <div class="featureSection invert">  
+        <!-- THE IMAGE -->
+        <div class="featureImg">
+            <img src="./_images/sideImage2.svg" alt="" srcset="">
+        </div>
+        
+        <!-- THE MESSAGE -->
+        <div class="featureMessage">
+            <h1>As an event host...</h1>
+            <p>
+                As an individual or company that want's to host an event (either one time or ocassionally), Vybite is for you.
+                You can create single or multiple date events (movies, parties, seminars, party) etc. 
+                <br>
+                Vybite provides you with a separate interactive system to properly manage your event(s) i.e tracking
+                ticket sales, viewing revenue, viewing customers reviews, getting event statisics like average customer age, location, gender etc.
+                to better help you in marketing.
+                <br>
+                When you host your event on vybite. I gets recommended to people who are most likely to be interested in it. Therefore increasing yout
+                chances of selling out tickets.
+                <br>
+                The event hosting system is very flexible, and tailored to fit all kinds of events; single/multiple dates, single/multiple ticket types,
+                seat allocation, ticket design etc.
+                <br>
+                With Vybite, you can save money on heavy advertising, selling tickets physically or through 3rd party vendors and generate more money
+                by having to tickets marketed to the right customers.
+            </p>
+        </div>        
+    </div>
+
+    <!-- MORE FEATURES SECTION -->
+    <div class="moreFeatures">
+        <section>
+            <h1>Not Convinced Yet ?</h1>
+            <p>
+                If you aren't still sure weather or not Vybite is for you, Here are some unique features Vybite has over other Events
+                and Ticketing applications.
+            </p>
+
+            <!-- THE FEATURES -->
+            <ul>
+                <li>
+                    Vybite covers <b>ALL</b> Kinds of events including Movies, Private Gatherings, Meetups etc.
+                </li>
+                <li>
+                    <b>Perks: </b> Event hosts can can place certain rewards and discounts on their event tickets.
+                </li>
+                <li>
+                   <b>Mood Search:</b> Users have the ability to search for events based on their current mood. e.g
+                   Fun, Romantic, Tourist, Bored, "Low on Cash", Adrenaline etc.
+                </li>
+                <li>
+                    Hosting of Private events, with invitations sent out to specific users.
+                </li>
+                <li>
+                    You can review events you attend, and also see reviews and comments of ongoing events. 
+                </li>
+                <li>
+                    <b>Uber Integration: </b> You can call an Uber from the app before or after buying your ticket to the event.
+                </li>
+            </ul>
+        </section>        
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <h1>Subscribe to our Newsletter</h1>
+        <p>Please enter your email address below to be subscribed to out mailing list</p>
+
+        <!-- EMAIL FORM -->
+        <div class="formSection" id="newsletter">
+            <input type="text" id="emailForm" placeholder="youremail@example.com">
+            <!-- SUBSCRIBE BUTTON -->
+            <button>Subscribe</button>
+        </div>
+       
+        <!-- CREDIT -->
+        <div class="credit">
+            A kintal Company &copy 2018
+        </div>
+    </footer>
+    
+
+    <!-- CONTACT LIGHTBOX -->
+    <div id="lightbox">
+        <div class="box">
+            <!-- SOCIAL MEDIA SECTION -->
+            <div class="socialMediaSection">
+
+            </div>
+
+            <!-- SEND MAIL SECTION -->
+            <div class="sendMailSection">
+                CONTACT FORM
+            </div>
+        </div>
+        <div class="back" onclick="toggleBox()"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

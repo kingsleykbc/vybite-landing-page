@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("Dec 25, 2018 15:37:25").getTime();
+var countDownDate = new Date("Jan 20, 2019 15:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -34,3 +34,35 @@ var x = setInterval(function () {
         document.getElementById("countdown").innerHTML = "EXPIRED";
     }
 }, 1000);
+
+
+
+// Toggle the Lightbox
+function toggleBox() {
+    var box = document.getElementById("lightbox");
+    if (box.style.display !== 'block') {
+        var op = 0;
+        var it = setInterval(() => {
+            op += 0.1;
+
+            box.style.display = 'block';
+            box.style.opacity = op;
+
+            if (op >= 1) {
+                op = 1;
+                clearInterval(it);
+            };
+        }, 20);
+    } else {
+        op = 1;
+        it = setInterval(() => {
+            op -= 0.1;
+            box.style.opacity = op;
+
+            if (op <= 0) {
+                box.style.display = 'none';
+                clearInterval(it);
+            };
+        }, 20);
+    }
+}
