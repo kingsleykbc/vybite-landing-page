@@ -118,11 +118,11 @@ header .menu a:first-child{
 .bottomMessage p{
     flex-grow: 1;
 }
-.bottomMessage .button{
+.bottomMessage .button, .sendMailSection button{
     background: #7d7ff7;
     color:#fff;
     display: inline-block;
-    padding: 2px 25px;
+    padding: 5px 25px;
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 5px 20px rgba(144, 132, 255, 0.4);
@@ -274,20 +274,71 @@ footer .credit{
 }
 #lightbox .box{
     position: fixed;
-    top:10%;
-    left: calc(50% - 450px);
-    right: calc(50% - 450px);
-    width: 90%;
-    max-width: 900px;
+    top:15%;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    margin: auto;
+    max-width: 850px;
     height: 80%;
-    max-height: 400px;
+    max-height: 500px;
     background: #fff;
     box-shadow: 0 1px 20px rgba(0,0,0,0.3);
     border-radius: 5px;
     z-index: 52;
+    display:flex;
 }
 .sendMailSection{
-    padding: 30px;
+    padding: 35px;
+    flex-grow: 1;
+    border-left: 2px solid #d8d6e7;
+    display:flex;
+    align-items:flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+
+.sendMailSection input, .sendMailSection textarea{
+    border: 2px solid #d8d6e7;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+}
+.sendMailSection textarea{
+    flex-grow: 1;
+    resize: none;
+}
+.sendMailSection button{
+    border: none;
+    padding: 15px;
+    margin: 0;
+}
+.sendMailSection input::placeholder, .sendMailSection textarea::placeholder{
+    color: #9b94c4;
+}
+.socialMediaSection{
+    padding: 35px;
+}
+.socialMediaSection a{
+    color: #000;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+}
+.socialMediaSection a div:first-child{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #c8c2e7;
+    border-radius: 40px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.socialMediaSection a div:last-child{
+    font-weight: bold;
 }
 
 @media screen and (max-width: 700px){
@@ -336,7 +387,26 @@ footer .credit{
     }
     footer button{
         width: 100%;
-
+    }
+    .box{
+        flex-direction: column;
+    }
+    .sendMailSection{
+        padding: 20px;
+    }
+    .socialMediaSection{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 2px solid #d8d6e7;
+        padding: 15px;
+    }
+    .socialMediaSection a{
+        margin-bottom: 5px;
+    }
+    .socialMediaSection a div:first-child{
+        width: 50px;
+        height: 50px;
     }
 }
 
