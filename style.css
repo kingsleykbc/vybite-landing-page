@@ -5,6 +5,7 @@
   list-style: none;
   text-decoration: none;
   font-size: 102%;
+  -webkit-overflow-scrolling: touch;
 }
 h1{
   font-size: 1.3em;
@@ -521,6 +522,10 @@ footer .credit{
   color:#fff;
   font-size: 120%;
   background: rgb(255, 32, 87);
+  text-align: center;
+}
+#lightbox2 .box *{
+  text-align: center !important;
 }
 
 #lightbox2 h3{

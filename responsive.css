@@ -75,6 +75,9 @@
   .graphic{
     height: 350px;
   }
+  .hostSection .graphic{
+    height: 280px;
+  }
   .stepsImages{
     display: none !important;
   }
