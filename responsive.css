@@ -56,7 +56,7 @@
   }
   .features li{
     transform: scale(0.85);
-    margin: 2px;
+    margin: 0;
   }
   .customerSection{
     flex-direction: column;
