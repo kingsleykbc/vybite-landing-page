@@ -203,7 +203,7 @@ nav{
 }
 #topRibbon{
   top:52px !important;
-  height: calc(50% - 27px) !important;
+  height: calc(50% - 20px) !important;
   left:0;
 }
 #about h1{
