@@ -75,8 +75,8 @@ nav{
 }
 
 #aboutBrief,#skills{
-    position: static;
-    padding: 25px;
+  position: static;
+  padding: 25px;
 }
 #aboutBrief .button{
     margin:30px auto
@@ -96,6 +96,7 @@ nav{
     overflow-x: overlay;
 }
 #skills li{
+  text-align: center;
     width: 200px;
     height: 300px;
 }
@@ -170,8 +171,41 @@ nav{
 #contactMe p{
     margin-top: 10px;
 }
+.portWrapper{
+  padding: 15px;
+  flex-direction: column;
+}
+.portfolioItem{
+  width: 100%;
+}
+.portfolioItem.app{
+  width: 100%;
+  max-width: 100%;
+}
+.portfolioPicture{
+  height: auto !important;
+}
+.splMain{
+  display: none !important;
+}
+.splDetails{
+  width: 100%;
+  max-width: 100%;
+}
+.splBox{
+  top: 30px;
+}
+
 
 /* ABOUT SECTION */
+#about{
+  height: calc(100% - 52px) !important;
+}
+#topRibbon{
+  top:52px !important;
+  height: calc(50% - 27px) !important;
+  left:0;
+}
 #about h1{
     font-size: 1.7em !important; 
 }

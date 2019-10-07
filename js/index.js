@@ -1,5 +1,8 @@
 $(document).ready(function () {
-  // RESPONSIVE HEADER ---------------------------------------------------------------------------------------
+  
+  // =======================================================================
+  //  HEADER SECTION
+  // =======================================================================
   var showingDropDown = false;
 
   function toggleDropDown() {
@@ -11,15 +14,17 @@ $(document).ready(function () {
       showingDropDown = true;
     }
   }
-
   $(".hamburgerMenu").click(function () {
     toggleDropDown();
   });
 
-  //SMOOTH SCROLLING -----------------------------------------------------------------------------------------
+
+  // =======================================================================
+  //  SMOOTH SCROLLING
+  // =======================================================================
   var scrollLink = $('header a, #backtoTop, #footerMenu a, #resMenu a');
 
-  // Smooth scrolling
+  //  Smooth scrolling
   scrollLink.click(function (e) {
     toggleDropDown();
     if (!showingAbout) {
@@ -36,8 +41,7 @@ $(document).ready(function () {
     scrollLinkSwitch($(this).scrollTop());
   });
 
-
-  // Active link switching
+  //  Active link switching
   function scrollLinkSwitch(scrollbarLocation) {
     scrollLink.each(function () {
       var sectionOffset = $(this.hash).offset().top - 20;
@@ -53,15 +57,18 @@ $(document).ready(function () {
   }
 
 
-  //ABOUT SECTION -------------------------------------------------------------------------------------------------
+  // =======================================================================
+  //  ABOUT SECTION
+  // =======================================================================
   var showingAbout = false;
-  //Toggle buttons
+
+  // Toggle buttons
   $("#aboutButton, #moreAbout, #footerAbout").click(function () {
     toggleDropDown();
     toggleAbout();
   });
 
-  //Dissmiss buttons
+  // Dissmiss buttons
   $(".logo, #cancelAbout").click(function () {
     if (showingAbout) {
       removeAbout();
@@ -69,9 +76,7 @@ $(document).ready(function () {
     }
   });
 
-
-  //ABOUT FUNCTIONS    
-  //Toggle the About Section
+  // Toggle the About Section
   function toggleAbout() {
     if (showingAbout) {
       removeAbout();
@@ -87,24 +92,25 @@ $(document).ready(function () {
   }
 
   function showAbout() {
-    //Prevent double scrollbars
+
+    // Prevent double scrollbars
     $("body").css("overflow", "hidden");
 
-    //Show the about
+    // Show the about
     $("#about").css("display", "block");
 
-    //roll the ribbons
+    // roll the ribbons
     setTimeout(function () {
       $("#topRibbon").addClass("roll");
       $("#bottomRibbon").addClass("roll");
     }, 100);
 
-    //Slide up the Content
+    // Slide up the Content
     setTimeout(function () {
       $("#aboutContent").addClass("roll");
     }, 400);
 
-    //Bring up the Avatar
+    // Bring up the Avatar
     setTimeout(function () {
       $("#aboutAvatar img").addClass("roll");
     }, 1200);
@@ -113,85 +119,86 @@ $(document).ready(function () {
   function removeAbout() {
     $("body").css("overflow", "visible");
 
-    //Slide down the content
+    // Slide down the content
     $("#aboutContent").removeClass("roll");
     $("#aboutAvatar img").removeClass("roll");
 
-    //remove ribbons
+    // remove ribbons
     setTimeout(function () {
       $("#topRibbon,#bottomRibbon").removeClass("roll");
     }, 400);
 
-    //hide the about
+    // hide the about
     setTimeout(function () {
       $("#about").css("display", "none");
     }, 1000);
   }
 
-  // SKILLS SECTION ----------------------------------------------------------------------------------------
+  //  =======================================================================
+  //   SKILLS SECTION
+  //  =======================================================================
   var dom = $("#tools ul");
   var content = "";
   var skills = [
     {
       img: "./images/logo_html.png",
       title: "HTML 5",
-      description: "This is a mark up language used for creating web pages. I use HTML to build static or PHP based websites.",
+      description: "I use HTML to build static websires or PHP-based web applications.",
       proficiency: "95%"
     },
     {
       img: "./images/logo_css.png",
       title: "CSS 4",
-      description: "This is a styling language used to design the pages. I use CSS with HTML and JSX.",
+      description: "I use CSS with HTML and JSX to style web pages.",
       proficiency: "95%"
     },
     {
       img: "./images/logo_js.png",
       title: "JavaScript (ES6)",
-      description: "A frontend scripting language. I use it for frontend and backend web app development.",
+      description: "I use JavaScript to build Client-side and Server-Side applications",
       proficiency: "75%"
     },
     {
       img: "./images/logo_react.png",
       title: "React.js",
-      description: "A frontend JS framework for building web apps. I use is for all my non PHP based web apps.",
-      proficiency: "85%"
+      description: "This is my main front-end development tool, and I use it for all non-PHP web applications.",
+      proficiency: "90%"
     },
     {
       img: "./images/logo_node.png",
       title: "Node.js",
-      description: "A JS multi-platform server environment. I use Node to build servers (backend) for my web and mobile apps.",
+      description: "I use Node to build servers (backend) for my web and mobile apps.",
       proficiency: "70%"
     },
     {
       img: "./images/logo_php.png",
       title: "PHP 7",
-      description: "A server side Scripting Language. I only use this for smaller web applications",
-      proficiency: "80%"
+      description: "I use PHP to build smaller web applications with minimal functionality.",
+      proficiency: "70%"
+    },
+    {
+      img: "./images/logo_flutter.png",
+      title: "Flutter SDK",
+      description: "I use flutter to build Android and IOS apps. With stunning UI and great functionality.",
+      proficiency: "60%"
     },
 
     // ART TOOLS
     {
-      img: "./images/logo_flash.png",
-      title: "Adobe Animate CC",
-      description: "A 2D vector animation tool. I use to to create my short animation videos",
-      proficiency: "85%"
-    },
-    {
       img: "./images/logo_illustrator.png",
-      title: "Adobe illustrator",
-      description: "A 2D vector image tool. I use it for vector icons and UI designs.",
+      title: "Adobe Illustrator CC",
+      description: "I use llustragor to design logos, posters and other 2d vector graphics.",
       proficiency: "50%"
     },
     {
-      img: "./images/logo_clip.png",
-      title: "Clip Studio",
-      description: "A 2D Raster image tool. I use it for drawing, as well designing icons and UI",
-      proficiency: "85%"
-    }
+      img: "./images/logo_xd.png",
+      title: "Adobe XD",
+      description: "I use Adobe XD do design User Interfaces for my Web and Mobile Applications.",
+      proficiency: "60%"
+    },
   ];
 
-
-  skills.forEach(function (item, index) {
+  skills.forEach(function (item) {
     content += "<li>" +
       "<div class='tool' >" +
       "<div class='toolInfo'>" +
@@ -210,12 +217,14 @@ $(document).ready(function () {
       "<p>Proficiency</p>" +
       "</div>" +
       "</div >" +
-      "</li>";
+    "</li>";
   });
   dom.html(content);
 
 
-  // FUNCTION TO SCROLL TOOLS AND CHANGE LABEL
+  //  =======================================================================
+  //   SKILL SECTION
+  //  =======================================================================
   function scrollTools(isLeft) {
     if (isLeft) {
       scrollNo = (scrollNo <= 0) ? 0 : scrollNo - 400;
@@ -227,111 +236,144 @@ $(document).ready(function () {
       scrollLeft: scrollNo
     }, 600);
 
-    var content = (scrollNo >= 800) ? "Art and Animation Tools" : "Web and App development Tools";
+    var content = (scrollNo >= 800) ? "Design Tools" : "Development Tools";
 
-    //Change Label
+    // Change Label
     $('#toolsLabel').html(content);
   }
 
-  // SCROLLING THE SKILLS SECTION
-  var scrollNo = 0; //you can use this number to manipulate the label
+  //  SCROLLING THE SKILLS SECTION
+  var scrollNo = 0; // you can use this number to manipulate the label
 
-  $('#left').click(function () {
-    scrollTools(true);
-  });
-
-  $('#right').click(function () {
-    scrollTools(false);
-  });
-
-
-  // PORTFOLIO SECTION--------------------------------------------------------------------------------------------
-
-  $("#portfolio nav div").click(function () {
-    $("#portfolio nav div").removeClass("active");
-    $(this).addClass("active");
-    var margin = "";
-
-    switch ($(this).attr('id')) {
-      case "portArt":
-        margin = "0";
-        break;
-      case "portAnimation":
-        margin = "-100%";
-        break;
-      case "portWebsites":
-        margin = "-200%";
-        break;
-      case "portApp":
-        margin = "-300%";
-        break;
-    }
-    $("#portArtSection").css("margin-left", margin);
-  });
-
-  //HANDLE PORTFOLIO ART IMAGES
-  var artworks = [
-    {
-      img: './images/artWorks/forge.png',
-      caption: "Forge Concept Art #1"
-    },
-    {
-      img: './images/artWorks/forgeFull.png',
-      caption: "Forge Concept Art #2"
-    },
-    {
-      img: './images/artWorks/dora.png',
-      caption: "Forge Concept Art #1"
-    },
-    {
-      img: './images/artWorks/justiceMerge.png',
-      caption: "Forge Concept Art #1"
-    },
-    {
-      img: './images/artWorks/knockout.png',
-      caption: "Forge Concept Art #2"
-    },
-    {
-      img: './images/artWorks/laraCroft.png',
-      caption: "Forge Concept Art #1"
-    },
-    {
-      img: './images/artWorks/moana.png',
-      caption: "Forge Concept Art #2"
-    },
-    {
-      img: './images/artWorks/neineCover.png',
-      caption: "Forge Concept Art #1"
-    },
-    {
-      img: './images/artWorks/neineFull.png',
-      caption: "Forge Concept Art #2"
-    },
-    {
-      img: './images/artWorks/praise.png',
-      caption: "Forge Concept Art #1"
-    }
-  ];
-
-  artContent = "";
-
-  artworks.forEach(function (item, index) {
-    artContent +=
-      "<div class='portImg' onClick=>" +
-      "<img src='" + item.img + "'/>" +
-      "<div class='overlay'>" +
-      "<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24'>" +
-      "<path d='M0 0h24v24H0z' fill='none' />" +
-      "<path d='M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z'/>" +
-      "</svg>" +
-      "</div>" +
-      "</div>";
-  });
-
-  $("#portArtSection").html(artContent);
-
-
+  $('#left').click(function () {scrollTools(true);});
+  $('#right').click(function () {scrollTools(false);});
 
 });
 
 
+// =======================================================================
+//  PORTFOLIO SECTION
+// =======================================================================
+const portfolio = [
+  {
+    title: "Student Disciplinary System",
+    image: './images/portfolioScreenshots/sds3.PNG',
+    description: `
+      A web application to help school administrators record infractions, track merit points, dole out punishments,
+      add and remove students from groups, etc. In addition, it helps students keep track of their offenses and 
+      points, and also appeal certain punishments where necessary.
+    `,
+    content: `
+      <img src="./images/portfolioScreenshots/sds.PNG"/>
+      <img src="./images/portfolioScreenshots/sds2.PNG"/>
+      <img src="./images/portfolioScreenshots/sds3.PNG"/>
+    `,
+    toolsUsed: "HTML5, CSS3, PHP",
+    link: "https://github.com/kingsleykbc/online-law-management-system"
+  },
+
+  {
+    title: "Montego Pool Cars",
+    image: './images/portfolioScreenshots/poolcar2.PNG',
+    description: `
+      A web application developed for Montego Upstream Services to help fleet managers, drivers and staff, book, organize
+      track and document trips taken in the office. The app is divided into three sub-systems (one for each entity).
+    `,
+    content: `
+      <img src="./images/portfolioScreenshots/poolcar1.PNG"/>
+      <img src="./images/portfolioScreenshots/poolcar2.PNG"/>
+      <img src="./images/portfolioScreenshots/poolcar3.PNG"/>
+    `,
+    toolsUsed: "HTML5, CSS3, PHP",
+    link: "http://poolcar.montego-holdings.com/"
+  },
+
+  {
+    title: "Lagos Business Hub ",
+    image: './images/portfolioScreenshots/lbh1.PNG',
+    description: `
+      An Online Marketplace and Business directory application, where small businesses can upload and sell their products
+      and services, without needing to setup an online store. In addition, users can find and post small jobs and get instant
+      response. <b>This application is still under development</b>
+    `,
+    content: `
+      <img src="./images/portfolioScreenshots/lbh1.PNG"/>
+      <img src="./images/portfolioScreenshots/lbh2.PNG"/>
+      <img src="./images/portfolioScreenshots/lbh3.PNG"/>
+    `,
+    toolsUsed: "React.js, Node.js (Express)",
+    link: "http://lagosbusinesshub.com/"
+  },
+
+  {
+    title: "Vybite",
+    image: './images/portfolioScreenshots/vybite1.PNG',
+    description: `
+      An AI-integrated Event recommendation and ticketing application. It is a mobile and Web application, where
+      users can ger recommended various movies, concerts, shows, etc. It also provides a seamless way to purchase
+      and use tickets. 
+    `,
+    content: `
+      <img src="./images/portfolioScreenshots/vybite1.PNG"/>
+      <img src="./images/portfolioScreenshots/vybite2.PNG"/>
+    `,
+    toolsUsed: "React.js, Flutter SDK, Node.js (Express)",
+    link: "http://vybite.com/"
+  },
+
+  {
+    title: "Other Websites",
+    image: './images/portfolioScreenshots/websites1.PNG',
+    description: `
+      I have also built static websites for company profiles.
+    `,
+    content: `
+      <img src="./images/portfolioScreenshots/websites1.PNG"/>
+      <img src="./images/portfolioScreenshots/websites2.PNG"/>
+    `,
+    toolsUsed: "HTML5, CSS3, PHP",
+    link: "http://drayton-ofs.com/"
+  }
+];
+let portfolioItems = '';
+
+
+// Map the portfolio items to widgets
+for (var i = 0; i < portfolio.length; i++) {
+  let extraClass = "";
+  if (portfolio[i].title == "Vybite") extraClass = "app";
+
+  portfolioItems += `
+    <div class="portfolioItem ${extraClass}" onClick="viewPortfolioDetails(${i})">
+      <div class="portfolioPicture">
+        <img src="${portfolio[i].image}"/>
+      </div>
+      <b>${portfolio[i].title}</b>
+    </div>
+  `;
+}
+
+// Show the portfolio Items
+$(".portWrapper").html(portfolioItems);
+
+/**
+* View Portfolio Details
+*/
+function viewPortfolioDetails(index) {
+  let data = portfolio[index];
+  $("#splContent").html(data.content);
+  $("#splTitle").html(data.title);
+  $("#splDesctiption").html(data.description);
+  $("#splToolsUsed").html(data.toolsUsed);
+  $("#splLink").html(`<a href=${data.link} target="blank"> ${data.link} </a>`);
+
+  toggleViewPortfolioLightBox();
+}
+
+/**
+ * Toggle the View Portfolio Lightbox
+ */
+function toggleViewPortfolioLightBox() {
+  let display = $(".selectedProjectLightBox").css("display") === "none" ? "block" : "none";
+  $(".selectedProjectLightBox").css("display", display);
+}

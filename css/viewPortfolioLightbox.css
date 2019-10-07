@@ -1,0 +1,100 @@
+/* CONTACT US selectedProjectLightBox */
+.selectedProjectLightBox{
+  display: none;
+}
+.selectedProjectLightBox, .splBack{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 50;
+}
+.splBack{
+  background: rgba(47, 45, 75, 0.5);
+  z-index: 51;
+  cursor: pointer;
+}
+.splBox{
+  position: fixed;
+  top:15%;
+  left: 0;
+  right: 0;
+  width: calc(100% - 20px);
+  margin: auto;
+  max-width: 1000px;
+  height: 90%;
+  max-height: 500px;
+  background: #fff;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  z-index: 52;
+  display:flex;
+}
+#splCancel{
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff3a5b;
+}
+
+
+/* THE BOX */
+#splTitle{
+  padding: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.splBox{
+  display:flex;
+}
+.splMain{
+  flex-grow: 1;
+}
+#splContent{
+  display:flex;
+  align-items:center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+#splContent img{
+  width: 47%;
+  margin: 10px;
+  max-height: 3200px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(62, 57, 107, 0.507);
+}
+
+.splDetails{
+  width: 40%;
+  max-width: 300px;
+  flex-shrink: 0;
+  padding: 20px;
+  border-left: 1px solid rgb(215, 216, 240);
+  color: #695d85;
+  line-height: 27px;
+}
+.splDetails h3{
+  margin-bottom: 10px;
+  color: #000;
+}
+#splDesctiption, #splToolsUsed {
+  margin-bottom: 20px;
+}
+#splToolsUsed{
+  font-weight: bold;
+  color: #000;
+  background: #eee9fa;
+  padding: 8px 15px;
+  font-size: 0.94em;
+  display: inline-block;
+  border-radius: 5px;
+}
+#splLink a{
+  color: #695d85;
+  text-decoration: underline;
+}
