@@ -143,13 +143,13 @@ $(document).ready(function () {
     {
       img: "./images/logo_html.png",
       title: "HTML 5",
-      description: "I use HTML to build static websires or PHP-based web applications.",
+      description: "I use HTML to build static web pages or PHP-based web applications.",
       proficiency: "95%"
     },
     {
       img: "./images/logo_css.png",
       title: "CSS 4",
-      description: "I use CSS with HTML and JSX to style web pages.",
+      description: "I use CSS with HTML and JSX to style my web applications.",
       proficiency: "95%"
     },
     {
@@ -167,7 +167,7 @@ $(document).ready(function () {
     {
       img: "./images/logo_node.png",
       title: "Node.js",
-      description: "I use Node to build servers (backend) for my web and mobile apps.",
+      description: "I use Node.js to build servers and rest APIs for my web and mobile apps.",
       proficiency: "70%"
     },
     {
@@ -187,13 +187,13 @@ $(document).ready(function () {
     {
       img: "./images/logo_illustrator.png",
       title: "Adobe Illustrator CC",
-      description: "I use llustragor to design logos, posters and other 2d vector graphics.",
+      description: "I use illustrator to design logos, posters and other 2d vector graphics.",
       proficiency: "50%"
     },
     {
       img: "./images/logo_xd.png",
       title: "Adobe XD",
-      description: "I use Adobe XD do design User Interfaces for my Web and Mobile Applications.",
+      description: "I use Adobe XD do design User-Interfaces for my web and mobile applications.",
       proficiency: "60%"
     },
   ];

@@ -1,175 +1,189 @@
 @media screen and (max-width: 800px){
 #resMenu{
-    display: block;
+  display: block;
 }
 #header{
-    display: none;
+  display: none;
 }
 #resHeader{
-    display:flex;
+  display:flex;
 }
 nav{
-    top:50px !important;
+  top:50px !important;
 }
 #resMenu{
-    position: fixed;
-    top:0;
-    bottom:0;
-    right:0;
-    width:0;
-    overflow: auto;
-    background: rgba(16, 17, 49, 0.9);
-    color: #fff;
-    z-index: 50;
-    text-align: center;
-    transition:all ease-out 0.3s;
+  position: fixed;
+  top:0;
+  bottom:0;
+  right:0;
+  width:0;
+  overflow: auto;
+  background: rgba(16, 17, 49, 0.9);
+  color: #fff;
+  z-index: 50;
+  text-align: center;
+  transition:all ease-out 0.3s;
 }
 #resMenu a,#resMenu span{
-    color: #fff;
-    font-size: 1.95em;
-    display: block;
-    opacity: 0.6;
-    margin-bottom: 8px;
+  color: #fff;
+  font-size: 1.95em;
+  display: block;
+  opacity: 0.6;
+  margin-bottom: 8px;
 }
 #resMenu .active{
-    opacity: 1;
+  opacity: 1;
 }
 #resMenu .hamburgerMenu{
-    text-align: right;
-    padding: 7px 20px;
-    font-size: 3em;
-    cursor: pointer;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+  text-align: right;
+  padding: 7px 20px;
+  font-size: 3em;
+  cursor: pointer;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 
 #whiteSpace{
-    position: static;
-    margin-top:80px;
+  position: static;
+  margin-top:80px;
 }
 #greeting{
-    margin:0 20px;
-    min-height: 450px;
-    padding-top: 150px;
+  margin:0 20px;
+  min-height: 450px;
+  padding-top: 150px;
 }
 #greeting h1{
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 #backdrop{
-    width: auto;
-    height:100%;
-    top:auto;
+  filter: brightness(0.6);
+  width: auto;
+  height:100%;
+  top:auto;
 }
 #backdrop img{
-    height: 100%;
-    transform-origin: 50% 50%;
-    min-width: auto;
+  height: 100%;
+  transform-origin: 50% 50%;
+  min-width: auto;
 }
 .sectionHeader{
-    font-size: 1.2em;
-    border:none;
-    padding: 10px;
-    text-align: center;
-    display: block;
-    width: 100%;
+  font-size: 1.2em;
+  border:none;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
-#aboutBrief,#skills{
+#aboutBrief, #skills{
   position: static;
   padding: 25px;
 }
+#skills{
+  padding: 0;
+}
+#tools li:first-child{
+  margin-left: 20px;
+}
+#tools li:last-child{
+  margin-right: 20px;
+}
 #aboutBrief .button{
-    margin:30px auto
-    
+  margin:30px auto
+  
+}
+#aboutBrief .info p{
+  text-align: left;
+  line-height: 27px;
 }
 
 #skills{
-    top:auto;
-    width: auto;
+  top:auto;
+  width: auto;
 }
 #skills .sectionHeader{
-    margin-left: 0;
+  margin-left: 0;
 }
 #skills ul{
-    padding: 30px 0;
-    width: 100%;
-    overflow-x: overlay;
+  padding: 30px 0;
+  width: 100%;
+  overflow-x: overlay;
 }
 #skills li{
-  text-align: center;
-    width: 200px;
-    height: 300px;
+text-align: center;
+  width: 200px;
+  height: 300px;
 }
 .toolInfo,.toolBack {
-    padding: 15px 10px;
+  padding: 15px 10px;
 }
 #left,#right{
-    display: none;
+  display: none;
 }
 #toolsLabel{
-    padding-top: 30px;
-    padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 #portfolio{
-    position: static;
+  position: static;
+  text-align: center;
 }
 #portfolio .top{
-    padding: 20px;
-    margin:0 auto;
-    padding-bottom: 50px;
+  padding: 20px;
+  margin:0 auto;
+  padding-bottom: 50px;
 }
 #portfolio nav span{
-    display: none;
+  display: none;
 }
 #portfolio nav svg{
-    width: 33px;
-    margin-right: 0;
+  width: 33px;
+  margin-right: 0;
 }
 #portArtSection{
-    padding: 10px;
-    padding-right: 0;
-    padding-bottom: 0;
-
+  padding: 10px;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 .portImg{
-    width: 150px;
-    height: 150px;
-    flex-basis: 150px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    box-shadow: none;
+  width: 150px;
+  height: 150px;
+  flex-basis: 150px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: none;
 }
 #socialMedia .links{
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 #socialMedia .links a{
-    flex-shrink: 0;
-    width: 45px;
-    height: 45px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 #contactMe{
-    display:flex;
-    flex-direction: column;
-    min-height:auto;
+  display:flex;
+  flex-direction: column;
+  min-height:auto;
 }
 #contactMe .left{
-    width: 100%;
-    padding: 25px;
-    padding-bottom: 55px;
-    text-align: center;
+  width: 100%;
+  padding: 25px;
+  padding-bottom: 55px;
+  text-align: center;
 }
 #contactMe .left::after{
-    display: none;
+  display: none;
 }
 #contactMe .right{
-    padding: 25px;
+  padding: 25px;
 }
 #contactMe p{
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .portWrapper{
   padding: 15px;
@@ -207,14 +221,14 @@ nav{
   left:0;
 }
 #about h1{
-    font-size: 1.7em !important; 
+  font-size: 1.7em !important; 
 }
 #about section{
-    margin-top:30px !important;
+  margin-top:30px !important;
 }
 #about .socialMedia svg{
-    width:27px !important;
-    height:27px !important;
+  width:27px !important;
+  height:27px !important;
 }
 
 }
